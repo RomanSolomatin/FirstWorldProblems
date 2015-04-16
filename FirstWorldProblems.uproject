@@ -1,0 +1,13 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{52A80D6D-46D5-2F29-50F9-4BBA503085AB}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "FirstWorldProblems",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}

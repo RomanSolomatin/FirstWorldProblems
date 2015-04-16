@@ -3,6 +3,8 @@
 *.lo
 *.o
 *.obj
+*.sln
+*.pdb
 
 # Precompiled Headers
 *.gch
@@ -26,3 +28,12 @@
 *.exe
 *.out
 *.app
+*.sdf
+
+Saved/**
+!Saved/Config/*
+
+DerivedDataCache/
+Intermediate/
+*.opensdf
+*.suo

@@ -9,20 +9,6 @@
 AmyPlayerCharacter::AmyPlayerCharacter(const class FPostConstructInitializeProperties& PCIP)
 	: Super(PCIP)
 {
-	CameraBoom = PCIP.CreateDefaultSubobject<USpringArmComponent>(this, TEXT("CameraBoom"));
-	CameraBoom->AttachTo(RootComponent);
-	CameraBoom->TargetArmLength = 1000.f;
-	CameraBoom->bAbsoluteRotation = true;
-	CameraBoom->RelativeRotation = FRotator(0.0f, -90.0f, 0.0f);
-
-	SideViewCameraComponent = PCIP.CreateDefaultSubobject<UCameraComponent>(this, TEXT("SideViewCamera"));
-	SideViewCameraComponent->ProjectionMode = ECameraProjectionMode::Perspective;
-	SideViewCameraComponent->FieldOfView = 120;
-	SideViewCameraComponent->AttachTo(CameraBoom, USpringArmComponent::SocketName);
-
-	//prevent auto rotation behaviour
-	CameraBoom->bAbsoluteRotation = true;
-	SideViewCameraComponent->bUsePawnControlRotation = false;
 	CharacterMovement->bOrientRotationToMovement = false;
 
 	//Collision Capsule
@@ -34,17 +20,6 @@ void::AmyPlayerCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 }
-
-
-void AmyPlayerCharacter::PickUpItem(AItem* Item)
-{
-	if (Item)
-	{
-		ItemInventory.Add(Item);
-		Item->PickedUp();
-	}
-}
-
 
 void AmyPlayerCharacter::SetupPlayerInputComponent(UInputComponent* InputComponent)
 {

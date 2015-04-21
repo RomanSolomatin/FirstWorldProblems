@@ -16,17 +16,6 @@ class FIRSTWORLDPROBLEMS_API AmyPlayerCharacter : public APaperCharacter
 		virtual void BeginPlay() override;
 
 
-	//Properties
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
-		TSubobjectPtr<class USpringArmComponent> CameraBoom;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
-		TSubobjectPtr<class UCameraComponent> SideViewCameraComponent;
-
-	UPROPERTY(EditAnywhere, Category = Inventory)
-		TArray<class AItem*> ItemInventory;		//Our inventory
-
-
 	//Functions
 	UFUNCTION()
 		void OnStartJump();
@@ -34,7 +23,6 @@ class FIRSTWORLDPROBLEMS_API AmyPlayerCharacter : public APaperCharacter
 	UFUNCTION()
 		void OnStopJump();
 
-	void PickUpItem(AItem* Item);
 
 
 
